@@ -1,0 +1,122 @@
+.outerLayer {
+  font-family: var(--font-family);
+  width: 100%;
+  background-color: var(--background);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.imageCard {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+  list-style: none;
+}
+
+.backButton {
+  padding: 0.7rem 1.2rem;
+  border-radius: 3px;
+  font-size: var(--font-size-home);
+  border: none;
+  cursor: pointer;
+  background: var(--elements);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+  text-transform: capitalize;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: scale 500ms ease;
+}
+
+.backButton:hover {
+  scale: 1.02;
+}
+
+.backButton i {
+  font-size: var(--font-size-detail);
+  margin-right: 10px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+
+.content img {
+  width: 100%;
+  max-width: 700px;
+}
+
+.content .info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+  padding: 0rem 1rem 2rem 0;
+  color: var(--text);
+  font-weight: var(--font-weight-3);
+  margin-left: auto;
+}
+
+.content .info .title {
+  font-size: var(--font-size-detail);
+  font-size: 32px;
+  font-weight: var(--font-weight-3);
+}
+.content .info p span {
+  font-weight: var(--font-weight-1);
+  color: var(--secondary-text);
+}
+
+.content .info .columns-2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content .info .columns-2 div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.borderCountries {
+  margin-top: auto;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.borderCountries p {
+  color: var(--text);
+}
+
+.borderCountries .linkCountry {
+  color: var(--secondary-text);
+  text-wrap: nowrap;
+  text-decoration: none;
+  background-color: var(--elements);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  transition: color 300ms ease;
+}
+.borderCountries .linkCountry:hover {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+  }
+  .content .info {
+    padding: 0 10px;
+  }
+}

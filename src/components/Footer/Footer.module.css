@@ -1,0 +1,14 @@
+.attribution {
+  width: 100%;
+  text-align: center;
+  color: var(--text);
+  height: 40px;
+  background: var(--background);
+}
+.attribution a {
+  color: var(--text);
+  text-decoration: none;
+}
+.attribution a:hover {
+  color: var(--secondary-text);
+}

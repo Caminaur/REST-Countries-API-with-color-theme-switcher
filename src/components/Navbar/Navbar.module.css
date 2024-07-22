@@ -1,0 +1,65 @@
+:root{
+    --mobileBreak: 375px;
+    --desktopBreak: 1440px;
+  
+    /* light mode */
+    --elements:hsl(0, 0%, 100%);
+    --background:hsl(0, 0%, 98%);
+    --text:hsl(200, 15%, 8%);
+    --input: hsl(0, 0%, 52%);
+    
+    --font-size-home: 14px;
+    --font-size-detail: 16px;
+    
+    --font-family: "Nunito Sans", sans-serif;
+    --font-weight-1: 300;
+    --font-weight-2: 600;
+    --font-weight-3: 800;
+}
+
+header{
+    font-family: var(--font-family);
+    width: 100%;
+    background-color: var(--elements);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header ul{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+    list-style:none;
+}
+
+.mainTitle{
+    color: var(--text);
+    font-size: var(--font-size-detail);
+    font-weight: var(--font-weight-3);
+}
+
+.themeButton{
+    color: var(--text);
+    background: var(--elements);
+    border: none;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    cursor: pointer;
+}
+
+.themeButton i{
+    font-size: 1.2rem;
+}
+
+@media (max-width:600px){
+    header ul{
+        width: 100%;
+        padding: 1rem 1rem;
+    }
+}
