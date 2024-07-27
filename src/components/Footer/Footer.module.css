@@ -2,7 +2,7 @@
   width: 100%;
   text-align: center;
   color: var(--text);
-  height: 40px;
+  padding: 1rem 0;
   background: var(--background);
 }
 .attribution a {

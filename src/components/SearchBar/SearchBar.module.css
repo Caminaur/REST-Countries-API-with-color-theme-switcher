@@ -82,7 +82,6 @@
   .searchBar > div,
   .searchInputDiv {
     width: 100%;
-    margin: 0 1rem;
   }
   .searchInputDiv input {
     padding: 1rem;

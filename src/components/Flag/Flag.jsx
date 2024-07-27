@@ -1,7 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./Flag.module.css";
-import { FlagContext } from "../../App";
-import { Link, redirect, useLoaderData, useNavigate } from "react-router-dom";
+import {
+  Form,
+  Link,
+  NavLink,
+  useLoaderData,
+  useNavigate,
+} from "react-router-dom";
 import { findId } from "../../functions/helper";
 
 export async function loader({ params }) {
@@ -13,44 +18,61 @@ export async function loader({ params }) {
 function Flag() {
   const flag = useLoaderData();
   const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate(-1);
+  };
+
   return (
     <div className={styles.outerLayer}>
       <div className={styles.imageCard}>
         <div className={styles.back}>
-          <button onClick={() => navigate("/")} className={styles.backButton}>
-            <i className="fa-solid fa-arrow-left-long"></i>return
-          </button>
+          <NavLink to="/">
+            <button onClick={handleNavigation} className={styles.backButton}>
+              <i className="fa-solid fa-arrow-left-long"></i>return
+            </button>
+          </NavLink>
           <div className={styles.content}>
-            <img src={flag.flag} alt="" />
+            <div className={styles.image}>
+              <img src={flag.flag} alt="" />
+            </div>
             <div className={styles.info}>
               <p className={styles.title}>{flag.name}</p>
               <div className={styles["columns-2"]}>
                 <div>
                   <p>
-                    Native Name: <span>{flag.name}</span>
+                    Native Name: <span>{flag.name ?? ""}</span>
                   </p>
                   <p>
-                    Population: <span>{flag.population}</span>
+                    Population: <span>{flag.population ?? ""}</span>
                   </p>
                   <p>
-                    Region: <span>{flag.region}</span>
+                    Region: <span>{flag.region ?? ""}</span>
                   </p>
                   <p>
-                    SubRegion: <span>{flag.subregion}</span>
+                    SubRegion: <span>{flag.subregion ?? ""}</span>
                   </p>
-                  <p>
-                    Capital: <span>{flag.capital}</span>
-                  </p>
+                  {flag.capital ? (
+                    <p>
+                      Capital: <span>{flag.capital ?? ""}</span>
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div>
                   <p>
-                    Top Level Domain: <span>{flag.topLevelDomain}</span>
+                    Top Level Domain: <span>{flag.topLevelDomain ?? ""}</span>
                   </p>
                   <p>
                     Currencies:
-                    {flag.currencies.map((currency) => (
-                      <span key={currency.code}>{currency.name}</span>
-                    ))}
+                    {flag.currencies ? (
+                      flag.currencies.map((currency) => (
+                        <span key={currency.code}>{currency.name}</span>
+                      ))
+                    ) : (
+                      <span> N/A</span>
+                    )}
                   </p>
                   <p>
                     Languages:

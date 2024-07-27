@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Flag, { loader as flagLoader } from "./components/Flag/Flag.jsx";
-import Main from "./components/Main/Main.jsx";
+import Main, { loader as mainLoader } from "./components/Main/Main.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +13,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main />,
+        loader: mainLoader,
       },
       {
         path: "flag/:flag",
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
 
 const rootDiv = document.getElementById("root");
 ReactDOM.createRoot(rootDiv).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <RouterProvider router={router} />
+  //</React.StrictMode>
 );
