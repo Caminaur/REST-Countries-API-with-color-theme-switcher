@@ -23,19 +23,20 @@ function Main() {
 
   for (let i = 1; i <= pages; i++) {
     const subpage = (
-      <Form className={styles.pagination} key={`pag-${i}`} role="pagination">
-        <input type="text" hidden name="q" defaultValue={q} />
-        <input type="text" hidden name="page" defaultValue={i} />
-        <input type="text" hidden name="region" defaultValue={region} />
-        <li
-          className={i === parseInt(page) ? `${styles.active}` : ""}
-          onClick={(e) => {
-            submit(e.currentTarget.parentElement);
-          }}
-        >
+      <li
+        key={`pag-${i}`}
+        className={i === parseInt(page) ? `${styles.active}` : ""}
+        onClick={(e) => {
+          submit(e.currentTarget.querySelector("form"));
+        }}
+      >
+        <Form className={styles.pagination}>
+          <input type="text" hidden name="q" defaultValue={q} />
+          <input type="text" hidden name="page" defaultValue={i} />
+          <input type="text" hidden name="region" defaultValue={region} />
           <p>{i}</p>
-        </li>
-      </Form>
+        </Form>
+      </li>
     );
     pagesList.push(subpage);
   }

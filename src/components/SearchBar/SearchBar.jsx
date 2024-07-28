@@ -9,7 +9,7 @@ function SearchBar() {
   return (
     <div className={styles.searchBar}>
       <div>
-        <Form role="search">
+        <Form>
           <div className={styles.searchInputDiv}>
             <i className="fa-solid fa-magnifying-glass"></i>
             <input
@@ -25,7 +25,7 @@ function SearchBar() {
             />
           </div>
         </Form>
-        <Form role="filter">
+        <Form>
           <div className={styles.dropdownFilter}>
             <select
               id="regionId"
