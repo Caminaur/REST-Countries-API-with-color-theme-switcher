@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { Form, useLoaderData, useSubmit } from "react-router-dom";
 
 function SearchBar() {
   const submit = useSubmit();
   const { q, region } = useLoaderData();
+
   return (
     <div className={styles.searchBar}>
       <div>
@@ -24,7 +25,7 @@ function SearchBar() {
             />
           </div>
         </Form>
-        <Form>
+        <Form role="filter">
           <div className={styles.dropdownFilter}>
             <select
               id="regionId"
